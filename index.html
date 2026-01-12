@@ -4,438 +4,515 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Venkata Sai Rakesh Kumar Kandra | Data Engineer</title>
-  <meta name="description" content="Data Engineer with 3+ years of experience in cloud-based ETL and analytics solutions using Informatica IICS, Snowflake, AWS S3, Databricks, and Oracle. Open to Germany opportunities under the EU Blue Card." />
-  <meta property="og:title" content="Venkata Sai Rakesh Kumar Kandra — Data Engineer" />
-  <meta property="og:description" content="Informatica IICS • Snowflake • AWS • Databricks • Oracle • ETL • CDC • SCD" />
-  <meta property="og:type" content="website" />
+  <meta name="description" content="Professional portfolio of Venkata Sai Rakesh Kumar Kandra — Data Engineer specializing in Informatica IICS, Snowflake, AWS, Databricks, and enterprise ETL solutions. Open to Germany (EU Blue Card)." />
 
   <style>
-    :root{
-      --bg:#070A12;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.08);
-      --text:#EAF0FF;
-      --muted:rgba(234,240,255,.72);
-      --line:rgba(255,255,255,.14);
-      --accent:#6EE7FF;
-      --accent2:#A78BFA;
-      --good:#34D399;
-      --warn:#FBBF24;
-      --max:1060px;
-      --radius:18px;
-      --shadow:0 22px 60px rgba(0,0,0,.45);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(110,231,255,.22), transparent 60%),
-                  radial-gradient(1000px 600px at 90% 10%, rgba(167,139,250,.22), transparent 60%),
-                  radial-gradient(900px 500px at 50% 90%, rgba(52,211,153,.14), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.55;
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    a:hover{text-decoration:none}
-
-    /* subtle grid */
-    .gridbg:before{
-      content:"";
-      position:fixed;inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
-      background-size: 56px 56px;
-      opacity:.16;
-      pointer-events:none;
-      mask-image: radial-gradient(600px 600px at 50% 0%, #000 30%, transparent 70%);
+    /* -----------------------------------------
+       BASE THEMING
+    ----------------------------------------- */
+    :root {
+      --clr-bg-light: #ffffff;
+      --clr-bg-dark: #0b0f1d;
+      --clr-text-light: #1a1a1a;
+      --clr-text-dark: #e8ebf2;
+      --clr-accent: #6EE7FF;
+      --clr-accent2: #A78BFA;
+      --clr-card-light: rgba(245, 245, 245, 0.8);
+      --clr-card-dark: rgba(20, 22, 36, 0.85);
+      --clr-panel-light: rgba(255, 255, 255, 0.9);
+      --clr-panel-dark: rgba(18, 20, 38, 0.9);
+      --clr-border-light: rgba(200,200,200, 0.4);
+      --clr-border-dark: rgba(255,255,255, 0.15);
+      --ff-main: "Segoe UI", Roboto, Arial, sans-serif;
+      --transition: 0.35s ease;
+      --max-width: 1080px;
     }
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px;position:relative}
-    .nav{
-      display:flex;justify-content:space-between;align-items:center;
-      position:sticky;top:0;z-index:50;
-      background: rgba(7,10,18,.55);
+    html {
+      scroll-behavior: smooth;
+      font-size: 15px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--ff-main);
+      background-color: var(--clr-bg-light);
+      color: var(--clr-text-light);
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--clr-bg-dark);
+        color: var(--clr-text-dark);
+      }
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: var(--ff-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover { opacity: 0.85; }
+
+    /* -----------------------------------------
+       NAVIGATION
+    ----------------------------------------- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: var(--clr-panel-light);
+      border-bottom: 1px solid var(--clr-border-light);
       backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-      padding:10px 18px;
-    }
-    .navin{max-width:var(--max);margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.2px}
-    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 18px rgba(110,231,255,.55)}
-    .navlinks{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:14px}
-    .navlinks a{padding:8px 10px;border-radius:12px}
-    .navlinks a:hover{background:rgba(255,255,255,.06);color:var(--text)}
-
-    .hero{
-      margin-top:18px;
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:26px;
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero:before{
-      content:"";
-      position:absolute;inset:-2px;
-      background: radial-gradient(800px 320px at 20% 0%, rgba(110,231,255,.35), transparent 60%),
-                  radial-gradient(700px 300px at 80% 0%, rgba(167,139,250,.35), transparent 60%);
-      opacity:.65;
-      pointer-events:none;
-    }
-    .heroin{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:18px;
-      padding:24px;
-    }
-    @media (max-width:900px){ .heroin{grid-template-columns:1fr} }
-
-    .h1{font-size:40px;line-height:1.08;margin:0 0 8px;font-weight:850;letter-spacing:-.6px}
-    .subtitle{color:var(--muted);font-size:15px;margin:0 0 16px}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 16px}
-    .chip{
-      padding:8px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:rgba(234,240,255,.88);
-      font-size:13px;
-      transition: transform .2s ease, background .2s ease;
-    }
-    .chip:hover{transform: translateY(-2px);background: rgba(255,255,255,.10)}
-
-    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:11px 14px;border-radius:14px;font-size:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      transition: transform .18s ease, background .18s ease, border .18s ease;
-      will-change: transform;
-    }
-    .btn:hover{transform: translateY(-2px);background: rgba(255,255,255,.10);border-color: rgba(255,255,255,.22)}
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(110,231,255,.22), rgba(167,139,250,.18));
-      border-color: rgba(110,231,255,.32);
-      box-shadow: 0 0 0 1px rgba(110,231,255,.10) inset;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      z-index: 100;
     }
 
-    .card{
-      border:1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 14px 40px rgba(0,0,0,.25);
-      padding:16px;
-    }
-    .side{
-      display:flex;flex-direction:column;gap:12px;
-      align-self:start;
-    }
-    .avatarwrap{display:flex;justify-content:flex-end;}
-    .avatar{
-      width:118px;height:118px;border-radius:50%;
-      object-fit:cover;
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow: 0 10px 26px rgba(0,0,0,.35);
-    }
-    @media (max-width:900px){ .avatarwrap{justify-content:flex-start} }
-
-    .kvs{
-      display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px
-    }
-    @media (max-width:520px){ .kvs{grid-template-columns:1fr} }
-    .kv{
-      padding:12px;border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-    }
-    .k{font-size:12px;color:rgba(234,240,255,.62);margin-bottom:4px}
-    .v{font-size:14px;color:rgba(234,240,255,.92)}
-
-    .section{margin-top:22px}
-    .section h2{margin:0 0 10px;font-size:16px;letter-spacing:.2px}
-    .grid2{display:grid;grid-template-columns: 1.2fr .8fr;gap:18px}
-    @media (max-width:900px){ .grid2{grid-template-columns:1fr} }
-
-    /* timeline */
-    .timeline{display:flex;flex-direction:column;gap:12px}
-    .job{
-      padding:14px;border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      transition: transform .18s ease, background .18s ease;
-    }
-    .job:hover{transform: translateY(-2px);background: rgba(255,255,255,.08)}
-    .jobtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .jobtitle{font-weight:750}
-    .jobmeta{color:rgba(234,240,255,.68);font-size:13px}
-    .bullets{margin:10px 0 0 18px;color:rgba(234,240,255,.86)}
-    .bullets li{margin:6px 0}
-
-    /* skills bars */
-    .bars{display:flex;flex-direction:column;gap:12px}
-    .bar{padding:12px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
-    .barrow{display:flex;justify-content:space-between;gap:10px;align-items:center}
-    .barname{font-size:14px;font-weight:650}
-    .barlvl{font-size:12px;color:rgba(234,240,255,.65)}
-    .track{
-      height:10px;border-radius:999px;margin-top:10px;
-      background: rgba(255,255,255,.10);
-      overflow:hidden;
-    }
-    .fill{
-      height:100%;
-      width:0%;
-      border-radius:999px;
-      background: linear-gradient(90deg, rgba(110,231,255,.9), rgba(167,139,250,.85));
-      box-shadow: 0 0 18px rgba(110,231,255,.25);
-      transition: width 1.2s ease;
+    @media (prefers-color-scheme: dark) {
+      .navbar {
+        background: var(--clr-panel-dark);
+        border-bottom: 1px solid var(--clr-border-dark);
+      }
     }
 
-    /* projects */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    @media (max-width:900px){ .projects{grid-template-columns:1fr} }
-    .proj{
-      padding:14px;border-radius:18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      transition: transform .18s ease, background .18s ease, border .18s ease;
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: var(--clr-accent);
+      cursor: default;
     }
-    .proj:hover{transform: translateY(-2px);background: rgba(255,255,255,.08);border-color: rgba(255,255,255,.18)}
-    .ptitle{font-weight:750}
-    .pmeta{color:rgba(234,240,255,.68);font-size:13px;margin-top:4px}
-    .ptags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .tag{font-size:12px;color:rgba(234,240,255,.82);border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);padding:6px 10px;border-radius:999px}
 
-    /* animations */
-    .reveal{opacity:0;transform: translateY(14px);transition: opacity .7s ease, transform .7s ease}
-    .reveal.show{opacity:1;transform: translateY(0)}
-    .footer{margin-top:28px;color:rgba(234,240,255,.65);font-size:13px;border-top:1px solid rgba(255,255,255,.10);padding-top:14px}
+    .navbar .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .navbar .nav-links a {
+      padding: 8px 10px;
+      border-radius: 8px;
+      transition: background-color var(--transition);
+    }
+
+    .navbar .nav-links a:hover {
+      background: var(--clr-accent2);
+      color: #fff;
+    }
+
+    /* -----------------------------------------
+       HERO / HEADER
+    ----------------------------------------- */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 48px 24px;
+      max-width: var(--max-width);
+      margin: auto;
+      gap: 28px;
+      text-align: left;
+    }
+
+    .hero-info {
+      max-width: 62%;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .hero .subtitle {
+      margin-top: 8px;
+      font-size: 16px;
+      color: #777;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .hero .subtitle { color: #aaa; }
+    }
+
+    .hero .chips {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      background: var(--clr-accent);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #111;
+      animation: fadeIn 0.7s ease forwards;
+    }
+
+    .hero .cta {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: 1px solid var(--clr-border-light);
+      transition: transform 0.27s ease, background-color 0.27s ease;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn.primary {
+      background: var(--clr-accent);
+      color: #111;
+      border: none;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--clr-accent2);
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    /* -----------------------------------------
+       SECTIONS
+    ----------------------------------------- */
+    .section-container {
+      padding: 36px 24px;
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
+    .section-container h2 {
+      font-size: 22px;
+      color: var(--clr-accent2);
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--clr-accent2);
+      width: fit-content;
+    }
+
+    /* -----------------------------------------
+       EXPERIENCE
+    ----------------------------------------- */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .exp-card {
+      padding: 18px 16px;
+      border-radius: 10px;
+      background: var(--clr-panel-light);
+      border: 1px solid var(--clr-border-light);
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .exp-card {
+        background: var(--clr-panel-dark);
+        border: 1px solid var(--clr-border-dark);
+      }
+    }
+
+    .exp-card .title {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .exp-card .meta {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* -----------------------------------------
+       SKILLS
+    ----------------------------------------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .skill {
+      padding: 12px 10px;
+      border-radius: 10px;
+      background: var(--clr-panel-light);
+      border: 1px solid var(--clr-border-light);
+      font-weight: 500;
+      animation: fadeIn 0.7s ease forwards;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .skill {
+        background: var(--clr-panel-dark);
+        border: 1px solid var(--clr-border-dark);
+      }
+    }
+
+    /* -----------------------------------------
+       PROJECT CAROUSEL
+    ----------------------------------------- */
+    .carousel-container {
+      position: relative;
+      max-width: var(--max-width);
+      margin-top: 24px;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 14px;
+    }
+    .project-card {
+      flex: 0 0 100%;
+      padding: 18px;
+      border-radius: 12px;
+      background: var(--clr-panel-light);
+      border: 1px solid var(--clr-border-light);
+      animation: fadeIn 0.7s ease forwards;
+      text-align: center;
+    }
+    @media (prefers-color-scheme: dark) {
+      .project-card {
+        background: var(--clr-panel-dark);
+        border: 1px solid var(--clr-border-dark);
+      }
+    }
+    .project-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--clr-accent2);
+    }
+    .project-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 48%;
+      background: var(--clr-accent2);
+      border: none;
+      padding: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: translateY(-50%);
+      opacity: 0.85;
+      transition: 0.27s ease;
+    }
+    .carousel-btn:hover { opacity: 1; }
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+    .footer {
+      text-align:center;
+      padding: 18px 0;
+      font-size: 13px;
+      margin-top: 40px;
+      border-top: 1px solid var(--clr-border-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .footer { border-top-color: var(--clr-border-dark); }
+    }
+
+    /* -----------------------------------------
+       ANIMATIONS
+    ----------------------------------------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
+<body>
 
-<body class="gridbg">
-  <div class="nav">
-    <div class="navin">
-      <div class="brand"><span class="dot"></span> Rakesh Kandra</div>
-      <div class="navlinks">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+  <!-- NAVIGATION -->
+  <div class="navbar">
+    <div class="logo">Rakesh Kandra</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </div>
+
+  <!-- HERO / HEADER -->
+  <div class="hero" id="about">
+    <div class="hero-info">
+      <h1>Venkata Sai Rakesh Kumar Kandra</h1>
+      <p class="subtitle">
+        Data Engineer • Informatica IICS • Snowflake • AWS • Databricks • SQL • ETL/CDC/SCD
+      </p>
+      <div class="chips">
+        <div class="chip">Informatica IICS</div>
+        <div class="chip">Snowflake</div>
+        <div class="chip">AWS S3</div>
+        <div class="chip">Databricks</div>
+        <div class="chip">Oracle SQL</div>
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="mailto:rakeshkandraa@gmail.com">Email Me</a>
+        <a class="btn" href="https://www.linkedin.com/in/rakesh-k-a694992a9" target="_blank">LinkedIn</a>
+        <a class="btn" href="resume.pdf" target="_blank">View CV</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="profile.jpeg" alt="Profile photo">
+    </div>
+  </div>
+
+  <!-- MORE SECTIONS WILL FOLLOW BELOW... -->
+  <!-- EXPERIENCE SECTION -->
+  <div class="section-container" id="experience">
+    <h2>Experience</h2>
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="title">Data Engineer — Botdefense IT Solutions (OPC) Private Limited</div>
+        <div class="meta">Aug 2025 – Present • India</div>
+        <ul>
+          <li>Designed and developed scalable ETL pipelines using Informatica IICS/CDI, integrating Oracle and AWS S3 into Snowflake.</li>
+          <li>Implemented incremental loads, CDC logic, and automation using Snowflake Streams and tasks.</li>
+          <li>Created optimized schemas, stages, file formats, and maintained analytics readiness.</li>
+          <li>Performed production monitoring, root cause analysis, and pipeline tuning.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="title">Data Engineer — Sonata Software (Client: Microsoft)</div>
+        <div class="meta">Oct 2022 – Aug 2023 • India</div>
+        <ul>
+          <li>Developed ETL mappings and workflows in Informatica IICS with taskflows and incremental logic.</li>
+          <li>Loaded AWS S3 data into Snowflake and implemented streams/tasks for CDC updates.</li>
+          <li>Monitored jobs, debugged failures, and performed data validation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="title">Informatica Developer / Product Support — Sonata Software (Client: Microsoft)</div>
+        <div class="meta">Nov 2021 – Sep 2022 • India</div>
+        <ul>
+          <li>Built ETL pipelines in Informatica PowerCenter for enterprise data integrations.</li>
+          <li>Designed mappings and workflows, implemented SCD Type 1/2 logic.</li>
+          <li>Validated data using Oracle SQL and PL/SQL and improved automation.</li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <div class="wrap">
-    <section class="hero reveal show">
-      <div class="heroin">
-        <div>
-          <h1 class="h1">Venkata Sai Rakesh Kumar Kandra</h1>
-          <p class="subtitle">
-            Data Engineer • Informatica IICS • Snowflake • AWS S3 • Databricks • Oracle • ETL/CDC/SCD
-            <br/>Open to Germany (EU Blue Card)
-          </p>
-
-          <div class="chips">
-            <div class="chip">Informatica IICS (IDMC/CDI)</div>
-            <div class="chip">Snowflake (Streams/Tasks, Stages)</div>
-            <div class="chip">AWS S3 & IAM</div>
-            <div class="chip">Databricks</div>
-            <div class="chip">Oracle • SQL • ETL</div>
-          </div>
-
-          <div class="cta">
-            <a class="btn primary" href="mailto:rakeshkandraa@gmail.com">✉️ Email</a>
-            <a class="btn" href="https://www.linkedin.com/in/rakesh-k-a694992a9" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
-            <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">⬇️ Download CV (PDF)</a>
-          </div>
-
-          <div class="kvs">
-            <div class="kv"><div class="k">Location</div><div class="v">Vijayawada, India</div></div>
-            <div class="kv"><div class="k">Relocation</div><div class="v">Germany (EU Blue Card)</div></div>
-            <div class="kv"><div class="k">Email</div><div class="v">rakeshkandraa@gmail.com</div></div>
-            <div class="kv"><div class="k">Phone</div><div class="v">+91 9542373823</div></div>
-          </div>
-        </div>
-
-        <div class="side">
-          <div class="avatarwrap">
-            <img class="avatar" src="profile.jpeg" alt="Profile photo" />
-          </div>
-
-          <div class="card" id="contact">
-            <h2 style="margin:0 0 8px">Contact</h2>
-            <div style="color:var(--muted);font-size:14px">
-              <div><b>Email:</b> <a href="mailto:rakeshkandraa@gmail.com">rakeshkandraa@gmail.com</a></div>
-              <div><b>Phone:</b> <a href="tel:+919542373823">+91 9542373823</a></div>
-              <div><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/rakesh-k-a694992a9" target="_blank" rel="noreferrer">Profile</a></div>
-              <div style="margin-top:10px;color:rgba(234,240,255,.65);font-size:13px">
-                Available for remote interviews • Ready to relocate
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section grid2">
-      <div class="card reveal" id="about">
-        <h2>About</h2>
-        <div style="color:var(--muted);font-size:15px">
-          Data Engineer with 3+ years of experience building enterprise data integration and cloud analytics solutions.
-          Focused on ETL pipeline development, incremental loading/CDC, and analytics-ready data models using Informatica IICS,
-          Snowflake, AWS S3, Databricks, Oracle, and SQL. Seeking Data Engineer opportunities in Germany aligned with EU Blue Card requirements.
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <h2>Education</h2>
-        <div style="color:rgba(234,240,255,.88);font-weight:650">Master of Arts — Information Technology Management</div>
-        <div style="color:var(--muted);font-size:13px">Webster University, St. Louis, Missouri, USA</div>
-        <div style="height:10px"></div>
-        <div style="color:rgba(234,240,255,.88);font-weight:650">B.Tech — Electronics & Communication Engineering</div>
-        <div style="color:var(--muted);font-size:13px">SSN Engineering College, Ongole, India</div>
-      </div>
-    </section>
-
-    <section class="section grid2">
-      <div class="card reveal" id="experience">
-        <h2>Experience</h2>
-        <div class="timeline">
-          <div class="job">
-            <div class="jobtop">
-              <div class="jobtitle">Data Engineer — Botdefense IT Solutions (OPC) Private Limited</div>
-              <div class="jobmeta">Aug 2025 – Present • India</div>
-            </div>
-            <ul class="bullets">
-              <li>Built ETL pipelines using Informatica IICS (CDI) integrating Oracle, AWS S3, and flat files into Snowflake.</li>
-              <li>Implemented incremental loads and CDC logic using Snowflake Streams and parameterized mappings.</li>
-              <li>Created schemas, stages, and file formats; validated loads using COPY INTO and SnowSQL.</li>
-              <li>Developed SCD Type 1/2 logic; supported Databricks validation and ETL tuning.</li>
-              <li>Handled production monitoring, troubleshooting, RCA, and documentation.</li>
-            </ul>
-          </div>
-
-          <div class="job">
-            <div class="jobtop">
-              <div class="jobtitle">Data Engineer — Sonata Software (Client: Microsoft)</div>
-              <div class="jobmeta">Oct 2022 – Aug 2023 • India</div>
-            </div>
-            <ul class="bullets">
-              <li>Developed Informatica IICS mappings using core transformations; built taskflows and schedules.</li>
-              <li>Loaded data from AWS S3 into Snowflake; implemented Streams/Tasks for incremental processing.</li>
-              <li>Monitored jobs, debugged failures, performed validation, and followed ETL best practices.</li>
-            </ul>
-          </div>
-
-          <div class="job">
-            <div class="jobtop">
-              <div class="jobtitle">Informatica Developer / Product Support — Sonata Software (Client: Microsoft)</div>
-              <div class="jobmeta">Nov 2021 – Sep 2022 • India</div>
-            </div>
-            <ul class="bullets">
-              <li>Developed ETL processes using Informatica PowerCenter 10.x; implemented SCD Type 1/2.</li>
-              <li>Created reusable components and validated data using Oracle SQL/PLSQL.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal" id="skills">
-        <h2>Skills</h2>
-        <div class="bars">
-          <div class="bar" data-pct="92">
-            <div class="barrow"><div class="barname">Informatica IICS / ETL</div><div class="barlvl">Advanced</div></div>
-            <div class="track"><div class="fill"></div></div>
-          </div>
-          <div class="bar" data-pct="88">
-            <div class="barrow"><div class="barname">Snowflake (Stages, Streams/Tasks)</div><div class="barlvl">Advanced</div></div>
-            <div class="track"><div class="fill"></div></div>
-          </div>
-          <div class="bar" data-pct="80">
-            <div class="barrow"><div class="barname">AWS S3 & IAM</div><div class="barlvl">Intermediate</div></div>
-            <div class="track"><div class="fill"></div></div>
-          </div>
-          <div class="bar" data-pct="76">
-            <div class="barrow"><div class="barname">Databricks</div><div class="barlvl">Intermediate</div></div>
-            <div class="track"><div class="fill"></div></div>
-          </div>
-          <div class="bar" data-pct="90">
-            <div class="barrow"><div class="barname">SQL / Oracle</div><div class="barlvl">Advanced</div></div>
-            <div class="track"><div class="fill"></div></div>
-          </div>
-        </div>
-
-        <div style="height:14px"></div>
-        <div style="color:var(--muted);font-size:13px">
-          Additional: PowerCenter • Data Warehousing • CDC • SCD Type 1/2 • Production Support • Git • Linux/UNIX
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card reveal" id="projects">
-        <h2>Projects (Add 2–3)</h2>
-        <div class="projects">
-          <div class="proj">
-            <div class="ptitle">Cloud ETL → Snowflake Analytics Mart</div>
-            <div class="pmeta">Informatica IICS + AWS S3 + Snowflake</div>
-            <div class="ptags">
-              <span class="tag">CDC</span><span class="tag">SCD Type 2</span><span class="tag">Snowflake Streams</span>
-            </div>
-            <div style="margin-top:10px;color:var(--muted);font-size:13px">
-              Built incremental pipelines and curated dimension/fact tables for reporting. Optimized loads and improved monitoring reliability.
-            </div>
-          </div>
-
-          <div class="proj">
-            <div class="ptitle">Data Quality & Validation Toolkit</div>
-            <div class="pmeta">SQL + Databricks notebooks</div>
-            <div class="ptags">
-              <span class="tag">Data Checks</span><span class="tag">RCA</span><span class="tag">Automation</span>
-            </div>
-            <div style="margin-top:10px;color:var(--muted);font-size:13px">
-              Automated validations, reconciliation checks, and failure triage to reduce rework and speed up incident resolution.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="y"></span> Venkata Sai Rakesh Kumar Kandra • Contact: <a href="mailto:rakeshkandraa@gmail.com">rakeshkandraa@gmail.com</a>
+  <!-- SKILLS SECTION -->
+  <div class="section-container" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Informatica IICS / ETL</div>
+      <div class="skill">Snowflake (Stages | Streams | Tasks)</div>
+      <div class="skill">AWS S3 & IAM</div>
+      <div class="skill">Databricks</div>
+      <div class="skill">Oracle SQL</div>
+      <div class="skill">Data Warehousing</div>
+      <div class="skill">CDC / SCD Type 1 & 2</div>
+      <div class="skill">Production Support / Debugging</div>
     </div>
   </div>
 
+  <!-- PROJECTS SECTION -->
+  <div class="section-container" id="projects">
+    <h2>Projects</h2>
+
+    <div class="carousel-container">
+      <button class="carousel-btn prev">&#8249;</button>
+      <div class="carousel-track">
+        <div class="project-card">
+          <h3>Cloud ETL & Snowflake Pipeline</h3>
+          <p>Designed scalable ETL pipelines using Informatica IICS and AWS, loading raw data into Snowflake with incremental logic and CDC patterns.</p>
+        </div>
+        <div class="project-card">
+          <h3>Databricks Data Quality Framework</h3>
+          <p>Implemented automated data quality framework in Databricks notebooks for validation and anomaly detection across sources.</p>
+        </div>
+        <div class="project-card">
+          <h3>Performance-Optimized Data Warehouse</h3>
+          <p>Architected and tuned Snowflake warehouses with partitioning and automation for high-speed analytics workloads.</p>
+        </div>
+        <div class="project-card">
+          <h3>Analytics-Ready Customer Data Mart</h3>
+          <p>Built analytics-ready data mart using ETL templates and SCD logic to support dashboards and business insights.</p>
+        </div>
+      </div>
+      <button class="carousel-btn next">&#8250;</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    © <span id="year"></span> Venkata Sai Rakesh Kumar Kandra • Contact: <a href="mailto:rakeshkandraa@gmail.com">rakeshkandraa@gmail.com</a>
+    <br>Powered by GitHub Pages • Designed for professional viewers
+  </div>
+
+  <!-- SCRIPTS (Animations, Theme, Carousel) -->
   <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('show');
-          // animate bars inside this section once
-          e.target.querySelectorAll('.bar').forEach(bar=>{
-            const pct = bar.getAttribute('data-pct') || 0;
-            const fill = bar.querySelector('.fill');
-            if(fill && !fill.dataset.done){
-              fill.style.width = pct + '%';
-              fill.dataset.done = '1';
-            }
-          });
-        }
-      });
-    }, {threshold: 0.12});
-    reveals.forEach(r=> io.observe(r));
+    // CAROUSEL
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const btnPrev = document.querySelector('.carousel-btn.prev');
+    const btnNext = document.querySelector('.carousel-btn.next');
+    let current = 0;
+
+    function updateCarousel() {
+      const width = slides[0].getBoundingClientRect().width;
+      track.style.transform = 'translateX(' + (-current * width) + 'px)';
+    }
+
+    btnPrev.addEventListener('click', () => {
+      current = (current === 0 ? slides.length - 1 : current - 1);
+      updateCarousel();
+    });
+
+    btnNext.addEventListener('click', () => {
+      current = (current === slides.length - 1 ? 0 : current + 1);
+      updateCarousel();
+    });
+
+    // AUTO ROTATE
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      updateCarousel();
+    }, 4000);
+
+    // RESIZE REPOSITION
+    window.addEventListener('resize', updateCarousel);
   </script>
+
 </body>
 </html>
